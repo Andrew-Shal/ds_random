@@ -1,0 +1,8 @@
+$("#invUnitCarousel .background-image-container").off();
+$("#invUnitCarousel .background-image-container").click(function(e){
+	var pic_url = $(".photo.image_"+($(this).index()+1)+" a").attr("data-src");
+	$(".photo.image_"+($(this).index()+1)).off()
+	$('a.for_lightbox').attr('href',pic_url)
+	$('a.for_lightbox').trigger('click')
+	$('#lightbox .lb-container').zoom({url:pic_url,magnify:2})
+})
